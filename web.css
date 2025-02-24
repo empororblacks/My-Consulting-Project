@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Site Header Styles */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: transparent;
+    z-index: 1000;
+  }
+  
+  .menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav ul li {
+    margin-right: 20px;
+  }
+  
+  .nav ul li a {
+    text-decoration: none;
+    color: #fff; /* White color to contrast against the image background */
+  }
+  
+  .nav ul li a:hover {
+    color: #ccc; /* Lighter color on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+      color:red;
+    }
+  
+    .nav {
+      position: fixed;
+      left: -100%;
+      top: 0;
+      width: 70%;
+      height: 100%;
+      background: #0e0d0d; /* Black background for the sidebar */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      transition: 0.3s;
+      z-index: 999;
+      padding-top: 60px;
+    }
+  
+    .nav ul {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav ul li {
+      margin: 20px 0;
+    }
+  
+    .nav.active {
+      left: 0;
+    }
+  
+    .close-icon {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      color: red; /* Close icon color set to red */
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .menu-icon {
+      display: none;
+    }
+  
+    .nav {
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      background: transparent;
+      z-index: 1001;
+    }
+  
+    .nav ul {
+      flex-direction: row;
+      justify-content: flex-end;
+      padding-right: 20px;
+    }
+  
+    .nav ul li {
+      margin: 0 20px;
+    }
+  
+    .close-icon {
+      display: none;
+    }
+  }
+  
+  /* Slideshow Styles */
+  .slideshow-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    margin-top: -60px; /* Adjust to remove space above the image */
+  }
+  
+  .slideshow {
+    display: flex;
+    height: 100%;
+    animation: slide 15s infinite;
+  }
+  
+  .slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  @keyframes slide {
+    0% { transform: translateX(0%); }
+    33% { transform: translateX(0%); }
+    66% { transform: translateX(-100%); }
+    100% { transform: translateX(-200%); }
+  }
+  
+  /* Slideshow Buttons */
+  .mySlides {
+    display: none;
+  }
+  
+  .w3-content {
+    position: relative;
+    max-width: 100%;
+  }
+  
+  .w3-display-container {
+    position: relative;
+  }
+  
+  .w3-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+  }
+  
+  .w3-display-left {
+    left: 0;
+  }
+  
+  .w3-display-right {
+    right: 0;
+  }
+  
+  .w3-button:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Styles for the card section */
+  .card-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    gap: 20px;
+    color: aqua;
+  }
+  
+  /* Styles for individual cards */
+  .card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .card-section {
+      flex-direction: column;
+      align-items: flex-start;
+      top: 58%;
+    }
+  
+    .card {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
+  .card i {
+    font-size: 36px;
+    color: #333;
+  }
+  
+  .card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .card p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /*------CONSULTING-------*/
+  .consult {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+  }
+  
+  .consult .blue {
+    color: blue;
+  }
+  
+  .consult .red {
+    color: red;
+  }
+  
+  .aqua-button {
+    background-color: aqua;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: transform 0.2s;
+  }
+  
+  .aqua-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .aqua-button a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /*--------what we do----------*/
+  .what-we-do {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .what-we-do h1 {
+    font-size: 2em;
+    font-weight: 500;
+    color: #a31515;
+  }
+  
+  .card2-section {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  
+  .card2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .card2 i {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .card2-content {
+    text-align: center;
+  }
+  
+  .card2-content h4 {
+    color: red;
+  }
+  
+  .card2-content p {
+    margin-top: 10px;
+  }
+  
+  .aqua-button {
+    background-color: aqua;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .aqua-button a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  @media (min-width: 768px) {
+    .card2-section {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
